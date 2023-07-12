@@ -22,7 +22,7 @@ import {getCategorias} from '../apiConecction/API.js';
             <th><img src = "img/${imagen}" class= "cuenta"></th>
             <th>${nombre}</th>
             <th>${descripcion}</th>
-            <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" detalle= "${detalle}">
+            <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" detalle= "">
             Detalle
             </button></th>
             <th><button type = "button" data-camper="${id}" class = "btn btn-outline-danger delete">Delete</button></th>
