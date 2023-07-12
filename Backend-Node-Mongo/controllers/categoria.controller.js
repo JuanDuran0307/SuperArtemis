@@ -14,14 +14,14 @@ const obtenerCategorias = async (req,res) =>{
 };
 
 const agregarCategorias = async (req,res)=>{
-    const categorias = new Categoria (req.body);
+    const categorias = new Categoria(req.body);
     try {
         const nuevacategoria = await categorias.save();
+
         res.json(nuevacategoria);
         
     } catch (error) {
-        res.status(404);
-        res.send({error:"categoria no existe"});
+        console.log(error);
     }
 
 };
@@ -41,7 +41,7 @@ const borrarCategorias = async ( req,res)=>{
 
 const actualizarCategorias = async(req,res)=>{
     try {
-        const categoria = await categoria.findOne({_id: req.param.id});
+        const categoria = await Categoria.findOne({_id: req.params.id});
         if(req.body.imagen){
             categoria.imagen = req.body.imagen;
         }

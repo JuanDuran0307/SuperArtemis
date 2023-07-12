@@ -2,12 +2,13 @@ import express from "express";
 
 
 
-const router = express.Router();
+const categoriasRouter = express.Router();
 
-import {obtenerCategoria,obtenerCategorias, agregarCategorias,borrarCategorias, actualizarCategorias} from "../controllers/categoria.controller.js";
-router.get("/one/:id", obtenerCategoria)
-router.get("/all", obtenerCategorias);
-router.post("/add", agregarCategorias);
-router.delete("/del/:id", borrarCategorias);
-router.patch("/upd/:id", actualizarCategorias);
-export default router;
+import {obtenerCategoria,obtenerCategorias,agregarCategorias,borrarCategorias, actualizarCategorias} from "../controllers/categoria.controller.js";
+categoriasRouter.get("/one/:id", obtenerCategoria)
+categoriasRouter.get("/all", obtenerCategorias);
+categoriasRouter.post("/add", agregarCategorias);
+categoriasRouter.delete("/del/:id", borrarCategorias);
+categoriasRouter.patch("/upd/:id", actualizarCategorias);
+
+export default categoriasRouter;
