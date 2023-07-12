@@ -6,7 +6,7 @@ import{obtenerEmpleados,agregarEmpleado,borrarEmpleado,actualizarEmpleados} from
 
 empleadosRouter.get("/all",obtenerEmpleados);
 empleadosRouter.post("/add", agregarEmpleado);
-empleadosRouter.delete("/del",borrarEmpleado);
-empleadosRouter.patch("/upt", actualizarEmpleados);
+empleadosRouter.delete("/del/:id", borrarEmpleado);
+empleadosRouter.patch("/upt/:id", actualizarEmpleados);
 
 export default empleadosRouter;

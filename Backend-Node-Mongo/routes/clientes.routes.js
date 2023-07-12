@@ -6,6 +6,6 @@ import {obtenerClientes,agregarCliente,borrarCliente,actualizarClientes} from ".
 
 clientesRouter.get("/all",obtenerClientes);
 clientesRouter.post("/add",agregarCliente );
-clientesRouter.delete("/del",borrarCliente);
-clientesRouter.patch("/upt",actualizarClientes)
+clientesRouter.delete("/del:id",borrarCliente);
+clientesRouter.patch("/upt:id",actualizarClientes)
 export default clientesRouter;
