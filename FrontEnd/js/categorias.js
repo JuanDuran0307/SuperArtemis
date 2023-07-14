@@ -5,15 +5,15 @@ import {getCategorias,deleteCategoria,addCategoria} from '../apiConecction/APIca
 /* 1. function IIFE */
 (function () {
     const eliminar = document.querySelector(".lista");
-    document.addEventListener('DOMContentLoaded',showclientes)
+    document.addEventListener('DOMContentLoaded',showcategorias)
     
     eliminar.addEventListener("click",borrar);
-    async function showclientes(){
+    async function showcategorias(){
         console.log("desde IIFE");
-        const clientes = await getCategorias();
-        console.log(clientes);
+        const categorias = await getCategorias();
+        console.log(categorias);
         const contedor = document.querySelector('tbody')
-        clientes.forEach(params => {
+        categorias.forEach(params => {
             const {_id,imagen,nombre,descripcion}= params;
             const rows = document.createElement('tr')
             rows.innerHTML = `
@@ -37,10 +37,10 @@ import {getCategorias,deleteCategoria,addCategoria} from '../apiConecction/APIca
     function borrar(e) {
     if (e.target.classList.contains("delete")) {
         console.log(e.target);
-        const idEmpleado = e.target.getAttribute("id");
+        const idCategoria = e.target.getAttribute("id");
         const confir = confirm("Desea eliminar este Empleado?");
         if (confir) {
-        deleteCategoria (idEmpleado);
+        deleteCategoria (idCategoria);
         }
     }
     }
