@@ -24,6 +24,6 @@ const categoriaSchema = mongoose.Schema(
 );
 
 
-const Categoria = mongoose.model("categories", categoriaSchema);
+const Categoria = mongoose.model("categorias", categoriaSchema);
 
 export default Categoria;

@@ -1,4 +1,4 @@
-import { getClientes,deleteClientes } from "../apiConecction/APIclientes.js";
+import { getClientes,deleteClientes,addClientes } from "../apiConecction/APIclientes.js";
 
 (function(){
     const eliminar = document.querySelector(".lista");
@@ -10,14 +10,17 @@ import { getClientes,deleteClientes } from "../apiConecction/APIclientes.js";
         console.log(clientes);
         const content = document.querySelector('tbody');
         clientes.forEach(element => {
-            const {_id,nombre,edad,celular,correo} = element;
+            const {_id,compañia,Contacto,Titulo,Direccion,Ciudad,Pais,Telefono} = element;
             const rows = document.createElement('tr')
             rows.innerHTML = `
                 <th>${_id}</th>
-                <th>${nombre} </th>
-                <th>${edad} </th>
-                <th>${celular} </th>
-                <th>${correo} </th>
+                <th>${compañia} </th>
+                <th>${Contacto} </th>
+                <th>${Titulo} </th>
+                <th>${Direccion} </th>
+                <th>${Ciudad} </th>
+                <th>${Pais} </th>
+                <th>${Telefono} </th>
                 <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" detalle= "">
                 Updtade
                 </button></th>
@@ -38,6 +41,45 @@ import { getClientes,deleteClientes } from "../apiConecction/APIclientes.js";
             }
         }
     }
+
+        
+        const formulario = document.querySelector("#formulario");
+        formulario.addEventListener("submit", insertClientes);
+    
+        function insertClientes(e) {
+        e.preventDefault();
+        const compañia = document.querySelector("#compañia").value;
+        const Contacto = document.querySelector("#Contacto").value;
+        const Titulo = document.querySelector("#Titulo").value;
+        const Direccion = document.querySelector("#Direccion").value;
+        const Ciudad = document.querySelector("#Ciudad").value;
+        const Pais = document.querySelector("#Pais").value;
+        const Telefono = document.querySelector("#Telefono").value;
+
+
+    
+        const clientes = {
+            compañia,
+            Contacto,
+            Titulo,
+            Direccion,
+            Ciudad,
+            Pais,
+            Telefono
+        };
+    
+    
+        if (validation(clientes)) {
+            alert("Todos los datos son obligatorios");
+            return;
+        }
+        alert("Datos guardados correctamente.");
+        return addClientes(clientes);
+        };
+    
+        function validation(Objeto) {
+        return !Object.values(Objeto).every((element) => element !== "");
+        };
 
 
 

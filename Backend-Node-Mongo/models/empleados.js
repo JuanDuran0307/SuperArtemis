@@ -21,12 +21,8 @@ const empleadosSchema = mongoose.Schema(
             type:String,
             required:true,
             trim:true,
-        },
-        direccion:{
-            type:String,
-            rquired:true,
-            trim:true,
-        },
+        }
+
     },
     {
         timestamps:true,

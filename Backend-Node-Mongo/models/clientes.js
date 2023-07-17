@@ -2,25 +2,40 @@ import mongoose from "mongoose";
 
 const clientesSchema = mongoose.Schema(
     {
-    nombre: {
+    compañia: {
         type: String,
         required:true,
         trim:true,
     },
-    edad: {
-        type: Number,
-        required:true,
-        trim:true,
-    },
-    celular: {
+    Contacto: {
         type: String,
         required:true,
         trim:true,
     },
-    correo: {
+    Titulo: {
+        type: String,
+        required:true,
+        trim:true,
+    },
+    Direccion: {
     type: String,
     required:true,
     trim:true,
+    },
+    Ciudad: {
+        type: String,
+        required:true,
+        trim:true,
+    },
+    Pais: {
+        type: String,
+        required:true,
+        trim:true,
+    },
+    Telefono: {
+        type: String,
+        required:true,
+        trim:true,
     }
     },
     {

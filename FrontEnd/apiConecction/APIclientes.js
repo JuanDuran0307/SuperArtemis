@@ -31,6 +31,24 @@ const deleteClientes = async(id)=>{
     }
 }
 
+    const addClientes = async (cliente)=>{
+    console.log(cliente);
+    try{
+        await fetch(`${urlAdd}/`,{
+            method: "POST",
+            body: JSON.stringify(cliente),
+            headers : {
+                'content-Type': 'application/json'
+            } 
+
+        })
+        window.location.href = "clientes.html"
+    }catch(error){
+        console.log(error);
+    }
+
+}
 
 
-export {getClientes,deleteClientes};
+
+export {getClientes,deleteClientes,addClientes};
